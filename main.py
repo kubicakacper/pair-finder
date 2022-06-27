@@ -1,36 +1,38 @@
-from PairFinder import PairFinder
+from pair_finder import *
 
 if __name__ == '__main__':
     instance1 = PairFinder()
     # instance1.sumOfNumbers = 12
     instance1.run()
 
-    # as a test
-    with open('./input.txt', 'r') as inputStream:
-        NUMBER = 12
-        countNumbers = [0] * (NUMBER + 1)
-        content = inputStream.read()
-        listOfNumbers = content.split(',')
-        for count, value in enumerate(listOfNumbers):
-            listOfNumbers[count] = int(value)
+# TODO 1 popraw wczytywanie, żeby poradził sobie z [1, 2] - żeby brał tę pierwszą i ostatnią liczbę też,
+# TODO 2 sprawdź jaki czas wykonania w zależności od liczby liczb: 100, 1000, 10000, 100000
+# TODO 2 zrób porządne testy jednostkowe, assert, zobacz swój projekt javovy, poczytaj o testach w pythonie
 
-        for value in listOfNumbers:
-            countNumbers[value] = countNumbers[value] + 1
-
-        print(countNumbers)
-
-        countPairs = [0] * (int(NUMBER / 2) + 1)
-
-        for count, value in enumerate(countPairs):
-            countPairs[count] = min(countNumbers[count], countNumbers[NUMBER - count])
-            if NUMBER % 2 == 0:
-                countPairs[int(NUMBER/2)] = int(countPairs[int(NUMBER/2)]/2)
-
-        for count, value in enumerate(countPairs):
-            print(f'Number of pairs {count}-{NUMBER - count}: {value}')
-
-
-
+    #
+    # # as a test
+    # with open('./txt_files/input.txt', 'r') as inputStream:
+    #     NUMBER = 12
+    #     countNumbers = [0] * (NUMBER + 1)
+    #     content = inputStream.read()
+    #     listOfNumbers = content.split(',')
+    #     for count, value in enumerate(listOfNumbers):
+    #         listOfNumbers[count] = int(value)
+    #
+    #     for value in listOfNumbers:
+    #         countNumbers[value] = countNumbers[value] + 1
+    #
+    #     print(countNumbers)
+    #
+    #     countPairs = [0] * (int(NUMBER / 2) + 1)
+    #
+    #     for count, value in enumerate(countPairs):
+    #         countPairs[count] = min(countNumbers[count], countNumbers[NUMBER - count])
+    #         if NUMBER % 2 == 0:
+    #             countPairs[int(NUMBER/2)] = int(countPairs[int(NUMBER/2)]/2)
+    #
+    #     for count, value in enumerate(countPairs):
+    #         print(f'Number of pairs {count}-{NUMBER - count}: {value}')
 
     # input = [random.randint(0, NUMBER) for i in range(INPUT_SIZE)]
     # # print(input)
@@ -49,9 +51,6 @@ if __name__ == '__main__':
     #
     # for count, value in enumerate(countPairs):
     #     print(f'Number of pairs {count}-{NUMBER-count}: {value}')
-
-
-
 
     # for count, value in enumerate(countPairs):
     #     for i in range(value):
@@ -79,7 +78,7 @@ if __name__ == '__main__':
 #
 # mark = Geeks()
 #
-# mark.age = 19 
+# mark.age = 19
 #
 # print(mark.age)
 #

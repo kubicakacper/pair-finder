@@ -58,14 +58,14 @@ class PairFinderStatic:
         cls.check_input_file_path(input_file_path)
         cls.check_output_file_path(output_file_path)
         offset_list = [0] * (int(sum_of_numbers / 2) + 1)
-        with open(input_file_path, 'r') as inputStream:
-            content = inputStream.read()
+        with open(input_file_path, 'r') as input_stream:
+            content = input_stream.read()
             list_of_numbers = content.split(',')
-            with open(output_file_path, 'w') as outputStream:
+            with open(output_file_path, 'w') as output_stream:
                 for number in list_of_numbers:
                     try:
                         number = cls.read_number(number, sum_of_numbers)
                     except ValueError as e:
                         print(f'ValueError. {e} It will be omitted.')
                         continue
-                    cls.count_offset_and_write_pair(number, sum_of_numbers, offset_list, outputStream)
+                    cls.count_offset_and_write_pair(number, sum_of_numbers, offset_list, output_stream)

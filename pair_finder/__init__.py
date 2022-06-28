@@ -1,3 +1,3 @@
-from .PairFinder import PairFinder
+from .pair_finder import PairFinder
 
-__all__ = ["PairFinder", "InputFileGenerator", "PairFinderStatic"]
+__all__ = ["PairFinder", "input_file_generator.py", "pair_finder_static.py"]

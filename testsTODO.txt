@@ -1,0 +1,35 @@
+Testy do przeprowadzenia:
+1. czy dobrze czyta z pliku:
+zrobić pliki txt z różnymi łancuchami, np. [5] czy $d63,73,^]
+sprawdź czy czyta np. '[' wraz z liczbą, czyli np. '[5' i czy da sie to konwertować na INT
+i popraw program, żeby przeczytał '5' w takiej sytuacji
+2. co się dzieje, kiedy są złe wartości, np. 63, -73, 65.8, 'ziemniak'
+postarać się złapać kazdy ValueError
+
+3. czy dobrze zlicza, czyli zrobić łańcuchy wejściowe ze znaną liczbą liczb,
+np. 0, 0, 0, 0, 0, 12, 12, 12, 12, 6, 6, 6, 6
+sprawdzić jak się zmienia offset, ile drukuje par
+4. zbadać format pliku wyjściowego oraz liczbę określonych par
+
+3 i 4 zrobić dla 0, 1, 2, 12 oraz 13
+
+zrób dir tests i wiele plików testowych
+each file starts with test_ so all test runners will assume that Python file contains tests to be executed
+
+import unittest
+
+class TestSum(unittest.TestCase):
+
+    def test_sum(self):
+        self.assertEqual(sum([1, 2, 3]), 6, "Should be 6")
+
+    def test_list_int(self):
+        """
+        Test that it can sum a list of integers
+        """
+        data = [1, 2, 3]
+        result = sum(data)
+        self.assertEqual(result, 6)
+
+if __name__ == '__main__':
+    unittest.main()

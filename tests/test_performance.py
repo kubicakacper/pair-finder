@@ -2,7 +2,8 @@
 import time
 from random import randint
 
-from pair_finder.pair_finder_static import PairFinderStatic
+# from pair_finder.pair_finder_static import
+import pair_finder
 
 
 # class TestPairFinder(unittest.TestCase):
@@ -22,7 +23,7 @@ def test_large_input_many_iterations(self):
         output_stream.write(input)
 
     start = time.time()
-    [PairFinderStatic.run(input_file_path=input_file, output_file_path=output_file) for _ in range(
+    [pair_finder.Finder.run(input_file_path=input_file, output_file_path=output_file) for _ in range(
         number_of_iterations)]
     # between_1 = time.time()
     # instance_1 = PairFinder(input_file_path=input_file, output_file_path=output_file)

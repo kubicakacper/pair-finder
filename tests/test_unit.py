@@ -1,5 +1,6 @@
 # import unittest
-from pair_finder.pair_finder_static import PairFinderStatic
+# from pair_finder.pair_finder_static import PairFinderStatic
+import pair_finder
 
 # class TestPairFinder(unittest.TestCase):
 
@@ -9,7 +10,7 @@ def test_incorrect_sum_of_numbers(self):
     """
     sum_of_numbers = -1
     with self.assertRaises(ValueError):
-        PairFinderStatic._check_sum_of_numbers(value=sum_of_numbers)
+        pair_finder.Finder._check_sum_of_numbers(value=sum_of_numbers)
 
 def test_incorrect_input_filepath(self):
     """
@@ -17,7 +18,7 @@ def test_incorrect_input_filepath(self):
     """
     filepath = 12
     with self.assertRaises(ValueError):
-        PairFinderStatic._check_input_file_path(path=filepath)
+        pair_finder.Finder._check_input_file_path(path=filepath)
 
 def test_incorrect_output_filepath(self):
     """
@@ -25,7 +26,7 @@ def test_incorrect_output_filepath(self):
     """
     filepath = 12
     with self.assertRaises(ValueError):
-        PairFinderStatic._check_output_file_path(path=filepath)
+        pair_finder.Finder._check_output_file_path(path=filepath)
 
 def test_read_string_from_file(self):
     """
@@ -41,7 +42,7 @@ def test_read_numbers_from_string(self):
     Checks if integer numbers are read correctly
     """
     data = ['4', '3', '00', '01', ]
-    results = [PairFinderStatic._read_number(number, 12) for number in data]
+    results = [pair_finder.Finder._read_number(number, 12) for number in data]
     [self.assertIsInstance(number, int) for number in results]
 
 def test_read_numbers_catch_value_error(self):
@@ -51,7 +52,7 @@ def test_read_numbers_catch_value_error(self):
     data = ['4.5', '-3', '33', 'DATUMO', 'Kacper']
     for number in data:
         with self.assertRaises(ValueError):
-            PairFinderStatic._read_number(number, 12)
+            pair_finder.Finder._read_number(number, 12)
 
 def test_write_string_to_file(self):
     """
@@ -73,7 +74,7 @@ def test_count_offset(self):
     filepath = 'outputs/for_test_count_offset.txt'
 
     with open(filepath, 'w') as output_stream:
-        [PairFinderStatic._count_offset_and_write_pair(
+        [pair_finder.Finder._count_offset_and_write_pair(
             number, sum_of_numbers, offset_list, output_stream) for number in data]
 
     self.assertEqual(offset_list, [2, 1, 0, -1, -2, 0, 1])

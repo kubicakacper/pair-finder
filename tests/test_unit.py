@@ -11,6 +11,9 @@ def test_incorrect_sum_of_numbers(self):
     sum_of_numbers = -1
     with self.assertRaises(ValueError):
         pair_finder.Finder._check_sum_of_numbers(value=sum_of_numbers)
+    sum_of_numbers = 1.5
+    with self.assertRaises(ValueError):
+        pair_finder.Finder._check_sum_of_numbers(value=sum_of_numbers)
 
 def test_incorrect_input_filepath(self):
     """

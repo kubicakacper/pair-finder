@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='Datumo',
     version='0.1',
-    packages=['pair_finder', 'tests'],
+    packages=['pair_finder'],
     url='https://github.com/kubicakacper/Datumo',
     license='MIT License',
     author='Kacper Kubica',

@@ -27,7 +27,7 @@ class PairFinderStaticAlternativeAlgorythm:
             print(f'ValueError: {e}')
 
     # @classmethod
-    # def read_number(cls, number, sum_of_numbers):
+    # def _read_number(cls, number, sum_of_numbers):
     #         number = int(number.strip('[]() '))  # it may raise a ValueError that is handled below
     #         if number < 0:
     #             raise ValueError(f'Found a value: {number}. It is a negative value.')
@@ -39,7 +39,7 @@ class PairFinderStaticAlternativeAlgorythm:
     def read_numbers(cls, list_of_numbers, sum_of_numbers):
         for count, value in enumerate(list_of_numbers):
             try:
-                number = int(value.strip('[]() '))  # it may raise a ValueError that is handled below
+                number = int(value.strip('[](){} '))  # it may raise a ValueError that is handled below
                 if number < 0:
                     raise ValueError(f'Found a value: {number}. It is a negative value.')
                 if number > sum_of_numbers:
@@ -48,7 +48,7 @@ class PairFinderStaticAlternativeAlgorythm:
             except ValueError as e:
                 print(f'ValueError. {e} It will be omitted.')
                 continue
-        # list_of_numbers = [cls.read_number(value, sum_of_numbers) for count, value in enumerate(list_of_numbers)]
+        # list_of_numbers = [cls._read_number(value, sum_of_numbers) for count, value in enumerate(list_of_numbers)]
 
     @classmethod
     def count_pairs(cls, count_numbers, count_pairs, sum_of_numbers):
@@ -74,7 +74,7 @@ class PairFinderStaticAlternativeAlgorythm:
             cls.read_numbers(list_of_numbers, sum_of_numbers)
             #
             # try:
-            #     number = cls.read_number(number, sum_of_numbers)
+            #     number = cls._read_number(number, sum_of_numbers)
             # except ValueError as e:
             #     print(f'ValueError. {e} It will be omitted.')
             #     continue
@@ -83,15 +83,16 @@ class PairFinderStaticAlternativeAlgorythm:
             cls.write_pairs(count_pairs, output_file_path, sum_of_numbers)
 
 # TODO unit tests !!
+# TODO and check if it works fine !!!
 
             # with open(output_file_path, 'w') as output_stream:
             #     for number in list_of_numbers:
             #         try:
-            #             number = cls.read_number(number, sum_of_numbers)
+            #             number = cls._read_number(number, sum_of_numbers)
             #         except ValueError as e:
             #             print(f'ValueError. {e} It will be omitted.')
             #             continue
-            #         cls.count_offset_and_write_pair(number, sum_of_numbers, offset_list, output_stream)
+            #         cls._count_offset_and_write_pair(number, sum_of_numbers, offset_list, output_stream)
 
 
     # with open('./txt_files/input.txt', 'r') as inputStream:

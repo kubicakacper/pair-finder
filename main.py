@@ -1,14 +1,11 @@
-from pair_finder.pair_finder_static import PairFinderStatic
+# from pair_finder.pair_finder_static import PairFinderStatic
+import pair_finder
 
 if __name__ == '__main__':
     # pair_finder_12 = PairFinder()
     # # pair_finder_12.sumOfNumbers = 12
     # pair_finder_12.run()
-    PairFinderStatic.run()
-
-# TODO 1 popraw wczytywanie, żeby poradził sobie z [1, 2] - żeby brał tę pierwszą i ostatnią liczbę też,
-# TODO 2 sprawdź jaki czas wykonania w zależności od liczby liczb: 100, 1000, 10000, 100000
-# TODO 2 zrób porządne testy jednostkowe, assert, zobacz swój projekt javovy, poczytaj o testach w pythonie
+    pair_finder.Finder.run()
 
     #
     # # as a test

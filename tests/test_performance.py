@@ -8,13 +8,13 @@ from pair_finder.pair_finder_static_alternative_algorythm import PairFinderStati
 
 class TestPairFinder(unittest.TestCase):
 
-    def test_static_vs_inastance(self):
+    def test_static_vs_instance(self):
         """
         Checks whole program, namely if pairs are found and written correctly based on inout file
         """
         input_file = 'fixtures/for_test_static_vs_instance.txt'
         output_file = 'outputs/for_test_static_vs_instance.txt'
-        number_of_iterations = 1000
+        number_of_iterations = 10
 
         start = time.time()
         [PairFinderStatic.run(input_file_path=input_file, output_file_path=output_file) for _ in range(

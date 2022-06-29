@@ -30,3 +30,24 @@ Jeśli trafię na 0, to inkremetuję zmienną zerową, jeśli na 12, to ją dekr
 Jeżeli inkrementacja/dekrementacja zbliży mnie do zera, to printuję parę do pliku.
 
 Myślę, że to nie jest problem odpowiedni dla OOP, ale niech będzie
+
+
+
+Kacper Kubica
+
+This app finds pairs of natural numbers (including 0) that add up to the given sum (e.g. 12).
+The app is:
+- **generic** (given sum can be any natural number),
+- ready for **stream processing** (processes each number separately and if a pair is loaded immediately after it is found),
+- resistant to value errors - handled error occurrences are logged in diag_<timestamp>.log file in diagnostic_logs directory
+- 
+
+How to run it - interface:
+
+
+Algorythm iteration:
+1. read next number from a .txt file - separator can be set, comma is default
+2. checks if there is a match (if this number adds up with any previous not used number to the given sum)
+3. write the pair to a .txt file (if found)
+
+How the check works?

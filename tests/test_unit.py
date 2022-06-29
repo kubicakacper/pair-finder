@@ -4,8 +4,6 @@ import pair_finder
 
 class TestPairFinder(unittest.TestCase):
 
-#TODO trzeba zamienić składnię unittest na pytest, bo GitHub Actions się pluje, ale udało się z package importem !!!
-
     def test_incorrect_sum_of_numbers(self):
         """
         Checks if input filepath is correct

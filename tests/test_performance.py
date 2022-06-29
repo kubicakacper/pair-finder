@@ -40,6 +40,5 @@ def test_large_input_many_iterations(self):
     # print(f'Alternative time: {alternative_time}')
 
 
-
 # if __name__ == '__main__':
 #     unittest.main()

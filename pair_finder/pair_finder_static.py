@@ -53,6 +53,8 @@ class PairFinderStatic:
     def run(cls, input_file_path='./txt_files/input.txt', output_file_path='./txt_files/output.txt', sum_of_numbers=12,
             separator=','):
         __logger = logging.getLogger('pair_finder_app')
+        logging.getLogger().setLevel(logging.INFO)
+        logging.debug(f'Algorythm started.')
         current_timestamp = str(datetime.now()).replace(' ', '_')
         logging.basicConfig(filename=f'diagnostic_logs/diag_{current_timestamp}.log', filemode='w', format='%(asctime)s - %(levelname)s: %(message)s')
         try:
@@ -64,9 +66,11 @@ class PairFinderStatic:
             return sys.exit(1)
         offset_list = [0] * (int(sum_of_numbers / 2) + 1)
         with open(input_file_path, 'r') as input_stream:
+            # logging.debug(f'Input file {input_file_path} opened.')
             content = input_stream.read()
             list_of_numbers = content.split(separator)
             with open(output_file_path, 'w') as output_stream:
+                # logging.debug(f'Output file {output_file_path} opened.')
                 for number in list_of_numbers:
                     try:
                         number = cls._read_number(number, sum_of_numbers)
@@ -74,4 +78,4 @@ class PairFinderStatic:
                         logging.error(f'ValueError. {e} It will be omitted.')
                         continue
                     cls._count_offset_and_write_pair(number, sum_of_numbers, offset_list, output_stream)
-        return 0
+        logging.debug(f'Algorythm finished.')

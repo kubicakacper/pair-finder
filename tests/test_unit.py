@@ -1,7 +1,6 @@
 # import unittest
 from pair_finder.pair_finder_static import PairFinderStatic
 
-
 # class TestPairFinder(unittest.TestCase):
 
 def test_incorrect_sum_of_numbers(self):

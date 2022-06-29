@@ -1,6 +1,6 @@
 # import unittest
 # from pair_finder.pair_finder_static import PairFinderStatic
-import pair_finder
+# import pair_finder
 
 # class TestPairFinder(unittest.TestCase):
 

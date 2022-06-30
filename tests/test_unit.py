@@ -35,7 +35,7 @@ class TestPairFinder(unittest.TestCase):
         """
         Checks if string is read from file correctly
         """
-        filepath = 'fixtures/for_test_read_string_from_file.txt'  # content: [1, 2, 3, 4, 5]
+        filepath = './tests/fixtures/for_test_read_string_from_file.txt'  # content: [1, 2, 3, 4, 5]
         with open(filepath, 'r') as input_stream:
             content = input_stream.read()
         self.assertEqual(content, '[1, 2, 3, 4, 5]')
@@ -61,7 +61,7 @@ class TestPairFinder(unittest.TestCase):
         """
         Checks if string is written to file correctly
         """
-        filepath = 'outputs/for_test_write_string_to_file.txt'
+        filepath = './tests/outputs/for_test_write_string_to_file.txt'
         content = '[1, 12], [3, 9], '
         with open(filepath, 'w') as output_stream:
             output_stream.write(content)
@@ -74,7 +74,7 @@ class TestPairFinder(unittest.TestCase):
         sum_of_numbers = 12
         offset_list = [0] * (int(sum_of_numbers / 2) + 1)
         data = [0, 0, 1, 2, 8, 8, 9, 6, 6, 6, 10]
-        filepath = 'outputs/for_test_count_offset.txt'
+        filepath = './tests/outputs/for_test_count_offset.txt'
 
         with open(filepath, 'w') as output_stream:
             [pair_finder.Finder._count_offset_and_write_pair(

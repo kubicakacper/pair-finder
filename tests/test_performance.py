@@ -15,8 +15,8 @@ class TestPairFinder(unittest.TestCase):
         sum_of_numbers = 12
         input_length = 10000
         input = str([randint(0, sum_of_numbers) for _ in range(input_length)])
-        input_file = 'fixtures/for_test_static_vs_instance.txt'
-        output_file = 'outputs/for_test_static_vs_instance.txt'
+        input_file = './tests/fixtures/for_test_static_vs_instance.txt'
+        output_file = './tests/outputs/for_test_static_vs_instance.txt'
         number_of_iterations = 1000
 
         with open(input_file, 'w') as output_stream:

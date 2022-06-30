@@ -54,9 +54,9 @@ class PairFinderStatic:
             separator=','):
         __logger = logging.getLogger('pair_finder_app')
         logging.getLogger().setLevel(logging.INFO)
-        logging.debug(f'Algorythm started.')
         current_timestamp = str(datetime.now()).replace(' ', '_')
         logging.basicConfig(filename=f'diagnostic_logs/diag_{current_timestamp}.log', filemode='w', format='%(asctime)s - %(levelname)s: %(message)s')
+        logging.debug(f'Algorythm started.')
         try:
             cls._check_sum_of_numbers(sum_of_numbers)
             cls._check_input_file_path(input_file_path)

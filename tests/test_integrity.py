@@ -8,8 +8,7 @@ class TestPairFinder(unittest.TestCase):
         """
         Checks whole program, namely if pairs are found and written correctly based on inout file
         """
-        # input_file = 'fixtures/for_test_run.txt'
-        input_file = 'https://github.com/kubicakacper/Datumo/blob/master/tests/fixtures/for_test_run.txt'
+        input_file = 'fixtures/for_test_run.txt'
         output_file = 'outputs/for_test_run.txt'
         pair_finder.Finder.run(input_file_path=input_file, output_file_path=output_file)
         with open(output_file, 'r') as input_stream:

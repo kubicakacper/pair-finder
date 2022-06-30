@@ -33,6 +33,7 @@ jobs:
           python setup.py install 
           python -c "import pair_finder"
       - name: Import input file
+        uses: actions/checkout@v3
         with:
           source_files: tests/fixtures/for_test_run.txt
       - name: Test with pytest
